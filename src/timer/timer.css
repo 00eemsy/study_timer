@@ -19,7 +19,8 @@ h1 {
     display: flex;
     justify-content: center;
 
-    margin: 0em;
+    margin: 0px;
+    margin-bottom: 1.5%
 }
 
 button {
@@ -53,10 +54,11 @@ button {
     font-size: 20px;
 }
 
-#editPopupBody {
+.PopupBody {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .editPopupRow {
@@ -64,10 +66,15 @@ button {
     justify-content: center;
 }
 
-.editPopupInput {
+#inputRow {
+    margin-bottom: 2.5%;
+}
+
+.PopupInput {
     display: flex;
     flex-direction: column;
     margin: 3%;
+    width: 50%;
 }
 
 label {
@@ -79,16 +86,31 @@ input {
     border-radius: 4px;
 }
 
-#saveButton {
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-}
-
 h2 {
     font-family: assistant;
-    font-size: 40px;
+    font-size: 35px;
+
+    margin-top: 0px;
     margin-bottom: 0px;
+}
+
+#goalRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    margin-bottom: 0em;
     margin-top: 10%;
+
+    column-gap: 2.5%;
+    width: 75%;
+}
+
+.svgButton {
+    cursor: pointer;
+}
+
+.saveButton {
+    margin-bottom: 1.5%;
 }

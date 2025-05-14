@@ -3,7 +3,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
-import { set } from 'mongoose';
+import { Cursor, set } from 'mongoose';
 
 const Timer = (() => {
 
@@ -15,6 +15,8 @@ const Timer = (() => {
 
     const [buttonBool, setButtonBool] = useState(false);
     const [buttonName, setButtonName] = useState('Start');
+
+    const [goal, setGoal] = useState('click the pencil to set a goal! ✏️');
 
     useEffect(() => {
         if (buttonBool == true) {
@@ -41,21 +43,21 @@ const Timer = (() => {
 
     const editPopup = () => {
         return (
-            <div id='editPopupBody'>
-                <div className='editPopupRow'>
-                    <div className='editPopupInput'>
+            <div className='PopupBody'>
+                <div className='editPopupRow' id='inputRow'>
+                    <div className='PopupInput'>
                         <label for='minuteInput'>Minutes:</label>
                         <input id='minuteInput' type='number'></input>
                     </div>
 
-                    <div className='editPopupInput'>
+                    <div className='PopupInput'>
                         <label for='secondInput'>Seconds:</label>
                         <input id='secondInput' type='number'></input>
                     </div>
                 </div>
 
                 <div className='editPopupRow'>
-                    <button id='saveButton'
+                    <button className='saveButton'
                         onClick={() => {
                             let newMinute = document.getElementById('minuteInput').value;
                             let newSecond = document.getElementById('secondInput').value;
@@ -77,9 +79,39 @@ const Timer = (() => {
         )
     };
 
+    const goalPopup = () => {
+        return (
+            <div className='PopupBody'>
+                <div className='PopupInput'>
+                    <label for='goalInput'>Goal:</label>
+                    <input id='goalInput' type='text'></input>
+                </div>
+
+                <button className='saveButton'
+                    onClick={() => {
+                        let newGoal = document.getElementById('goalInput').value;
+
+                        if (newGoal.length <= 63) {
+                            setGoal(newGoal);
+                        } else {
+                            throw console.error('Invalid input');
+                        }
+                }}>Save</button>
+            </div>
+        )
+    }
+
     return (
         <div id='body'>
-            <h2>goal: revise tute ✨</h2>
+            <div id= 'goalRow'>
+                <h2>goal: study timer build sess 🤖</h2>
+                <Popup
+                    trigger={
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/></svg>
+                    }
+                    modal>
+                {goalPopup}</Popup>
+            </div>
 
             <h1>
                 <span>{formattedMinute}:{formattedSecond}</span>
