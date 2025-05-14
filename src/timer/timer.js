@@ -1,10 +1,14 @@
 import './timer.css';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import Popup from 'reactjs-popup';
+import { set } from 'mongoose';
 
 const Timer = (() => {
+
+    const [ogMinute, setOGMinute] = useState(25);
+    const [ogSecond, setOGSecond] = useState(0);
 
     const [minute, setMinute] = useState(25);
     const [second, setSecond] = useState(0);
@@ -57,11 +61,16 @@ const Timer = (() => {
                             let newSecond = document.getElementById('secondInput').value;
 
                             if (newMinute >= 0 && newSecond >= 0 && newSecond <= 59) {
+                                setOGMinute(newMinute);
+                                setOGSecond(newSecond);
                                 setMinute(newMinute);
                                 setSecond(newSecond);
                             } else {
                                 throw console.error('Invalid input');
                             }
+
+                            setButtonBool(false);
+                            setButtonName('Start');
                     }}>Save</button>
                 </div>
             </div>
@@ -71,13 +80,20 @@ const Timer = (() => {
     return (
         <div id='body'>
             <h2>goal: revise tute ✨</h2>
-            
+
             <h1>
                 <span>{formattedMinute}:{formattedSecond}</span>
             </h1>
 
             <div id='buttonRow'>
-                <button>
+                <button onClick={() => {
+                    setButtonBool(false);
+                    if (buttonName == 'Pause') {
+                        setButtonName('Start');
+                    }
+                    setMinute(ogMinute);
+                    setSecond(ogSecond);
+                }}>
                     Reset
                 </button>
 
@@ -90,12 +106,7 @@ const Timer = (() => {
                         }
                 }}>{buttonName}</button>
 
-                {/* <Popup trigger={<button> Trigger</button>} position="right center">
-                    <div>Popup content here !!</div>
-                </Popup> */}
-
                 <Popup 
-                    onClick={() => {setButtonBool(false)}}
                     trigger={<button>
                         Edit
                     </button>}
