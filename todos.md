@@ -4,7 +4,7 @@
 - [x] goal 🎯
     - [x] css 🎨
     - [x] goal popup 🪟
-- [ ] github page functional 🖥️
+- [x] github page functional 🖥️
 - [ ] readme up 📚
 
 
