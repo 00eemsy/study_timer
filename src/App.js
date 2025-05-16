@@ -4,14 +4,10 @@ import Timer from './timer/timer.js'
 const App = (() => {
   return (
     <div>
-      <head>
-        <title>my_study_timer ⏲️</title>
-      </head>
-      <body>
+      <title>my_study_timer ⏲️</title>
         <div id='aura'>
           <Timer/>
         </div>
-      </body>
     </div>
   )
 
