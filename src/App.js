@@ -3,8 +3,15 @@ import Timer from './timer/timer.js'
 
 const App = (() => {
   return (
-    <div id='aura'>
-      <Timer/>
+    <div>
+      <head>
+        <title>my_study_timer ⏲️</title>
+      </head>
+      <body>
+        <div id='aura'>
+          <Timer/>
+        </div>
+      </body>
     </div>
   )
 
