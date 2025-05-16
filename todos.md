@@ -1,10 +1,11 @@
 **todos ✅**
 - [x] reset button 🔂
 - [x] button css 🎨
-- [ ] goal 🎯
+- [x] goal 🎯
     - [x] css 🎨
-    - [ ] goal popup 🪟
+    - [x] goal popup 🪟
 - [ ] github page functional 🖥️
+- [ ] readme up 📚
 
 
 **used apis/libraries/sources 📚**
