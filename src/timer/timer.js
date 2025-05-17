@@ -1,9 +1,9 @@
 import './timer.css';
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
-import { Cursor, set } from 'mongoose';
+import finished_sfx from './decide.mp3';
 
 const Timer = (() => {
 
@@ -18,11 +18,14 @@ const Timer = (() => {
 
     const [goal, setGoal] = useState('click the pencil to set a goal! ✏️');
 
+    const audio = new Audio(finished_sfx);
+
     useEffect(() => {
         if (buttonBool == true) {
             const intervalID = setInterval(() => {
                 if (second == 0) {
                     if (minute == 0) {
+                        audio.play()
                         clearInterval(intervalID);
                     } else {
                         setMinute(minute - 1);
