@@ -1,7 +1,7 @@
 **todos ✅**
-- [ ] responsive react 📱
+- [x] responsive react 📱
 - [x] 00:00 alarm ⏰
-- [ ] add figma, alarm sound credits to readMe 🎨
+- [x] add figma, alarm sound credits to readMe 🎨
 
 
 **used apis/libraries/sources 📚**

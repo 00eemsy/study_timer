@@ -2,7 +2,12 @@
 
 Welcome to `study_timer ⏲️`, my take on a clean and visually-appealing study timer. `study_timer ⏲️` was born out of my desire for a beautiful study timer that actually worked. Something not too frilly, but customizable enough to make every study session a bit more fun!
 
-This web app is React.js-based with CSS for stylizations. I also employ the [**Reactjs-popup**](https://github.com/yjose/reactjs-popup) library for popup functionality, with an SVG from [**iconmonstr**](https://iconmonstr.com/pencil-14-svg/ ).
+This web app is React.js-based with CSS for stylizations. I also employ the [**Reactjs-popup**](https://github.com/yjose/reactjs-popup) library for popup functionality, with an SVG from [**iconmonstr**](https://iconmonstr.com/pencil-14-svg/ ) and an audio from [**freesound_community**](https://pixabay.com/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=14575) from [**Pixabay**](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=14575).
+
+Additionally, I employed Figma to map out the UI/UX. You can find the original design linked [**here**](https://www.figma.com/proto/lyvhaH97QPDDCc10jmCqUd/timer-app?node-id=1-2&p=f&t=lu26ndfDqhU7Mrmh-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2).
+
+⬇️ Prototype sample of `study_timer ⏲️` from Figma:
+![](./readme_visuals/figma_prototype.png)
 
 ⬇️ Opening still of `study_timer ⏲️`:
 ![](./readme_visuals/opening_still.png)
